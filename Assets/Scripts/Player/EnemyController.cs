@@ -9,6 +9,11 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D enemy;
     private GameObject target;
     private LogicManager logicManager;
+    public GameObject powerfab;
+    public Transform firePoint;
+    private float shootInterval = 2f;
+    private float shootedTime;
+    private bool isHurt = false;
 
     void Start()
     {
@@ -19,9 +24,14 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        // transform.LookAt(target.position);
-        // transform.Rotate(new Vector3(0,-90,0),Space.Self);
+        shootedTime += Time.deltaTime;
 
+        // TODO: List below
+        /** 
+            - Make the chase more smoother
+            - Make enemy chase player to top
+            - Make the enemy distance either random or calculate each enemy position or make waves of enemy
+        **/
         if(Vector3.Distance(transform.position, target.transform.position) > 5.0f) {
         //     transform.Translate(new Vector3(speed_f * Time.deltaTime, 0, 0));
             // if(transform.position.y < target.transform.position.y) {
@@ -29,15 +39,31 @@ public class EnemyController : MonoBehaviour
             // }else {
                 transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed_f * Time.deltaTime);    
             // }
+        } else {
+            if(!isHurt)
+                AttackPlayer();
         }
     }
 
-    public void TakeDamage(int damage) {
+    // TODO: Check for performance and reliability for this coroutine
+    public IEnumerator TakeDamage(int damage) {
         health -= damage;
+        isHurt = true;
 
         if(health <= 0) {
             logicManager.AddScore();
             Destroy(gameObject);
+        }
+
+        yield return new WaitForSeconds(1.5f);
+
+        isHurt = false;
+    }
+
+    void AttackPlayer() {
+        if(shootedTime > shootInterval) {
+            shootedTime = 0f;
+            Instantiate(powerfab, firePoint.position, transform.rotation);
         }
     }
 }
