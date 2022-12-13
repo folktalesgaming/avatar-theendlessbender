@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private float shootInterval = 1f;
     private float shootedTime;
     public GameObject powerPrefab;
+    public Transform firePoint;
 
     void Start()
     {
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
     public void Shoot() {
         if(shootedTime > shootInterval) {
             shootedTime = 0f;
-            Instantiate(powerPrefab, transform.position, transform.rotation);
+            Instantiate(powerPrefab, firePoint.position, transform.rotation);
         }
     }
 
