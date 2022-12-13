@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private float jumpedTime;
     private float shootInterval = 1f;
     private float shootedTime;
+    private int health = 150;
     public GameObject powerPrefab;
     public Transform firePoint;
 
@@ -91,6 +92,15 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.up * jump_force_f);
             isOnGround = false;
             jumpedTime = 0f;
+        }
+    }
+
+    // TODO: Check for reliability and make a hurt pause similar to enemy
+    public void TakeDamage(int damage) {
+        health -= damage;
+
+        if(health <= 0) {
+            Destroy(gameObject);
         }
     }
 
