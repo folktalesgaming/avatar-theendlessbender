@@ -23,6 +23,12 @@ public class EnemySpwaner : MonoBehaviour
             new Vector3(-11, 2, 0),
             new Vector3(11, 2, 0)
         };
-        Instantiate(enemyPrefab, spwanPositions[Random.Range(0, spwanPositions.Length)], enemyPrefab.transform.rotation);
+        // TODO: fix the rotation on spawn
+        int rndVector = Random.Range(0, spwanPositions.Length);
+
+        if(rndVector == 0) 
+            enemyPrefab.transform.Rotate(0f, 180f, 0f);
+    
+        Instantiate(enemyPrefab, spwanPositions[rndVector], enemyPrefab.transform.rotation);
     }
 }
