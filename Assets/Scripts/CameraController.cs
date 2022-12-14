@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     private Transform playerTransform;
     private Vector3 tempCameraPosition;
 
-    [SerializeField]private float maxY, minY;
+    [SerializeField]private float maxX, minX;
 
     void Start()
     {
@@ -17,12 +17,12 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         tempCameraPosition = transform.position;
-        tempCameraPosition.y = playerTransform.position.y;
+        tempCameraPosition.x = playerTransform.position.x;
 
-        if (tempCameraPosition.y < minY)
-            tempCameraPosition.y = minY;
-        if (tempCameraPosition.y > maxY)
-            tempCameraPosition.y = maxY;
+        if (tempCameraPosition.x < minX)
+            tempCameraPosition.x = minX;
+        if (tempCameraPosition.x > maxX)
+            tempCameraPosition.x = maxX;
 
         transform.position = tempCameraPosition;
     }
