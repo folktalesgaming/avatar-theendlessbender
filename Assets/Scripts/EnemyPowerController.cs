@@ -16,7 +16,7 @@ public class EnemyPowerController : MonoBehaviour
 
     void Update()
     {
-        if(transform.position.x > 15 || transform.position.x < -15) {
+        if(transform.position.x > 35 || transform.position.x < -35) {
             Destroy(gameObject);
         }
     }
