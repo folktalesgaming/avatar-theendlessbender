@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: 746c7eda2d52bca4eb0e9b6cdec459a7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 20, y: 50, z: 21, w: 69}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: avatar_ground_platform_10
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 50
+        width: 560
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95846919f9149b43ae88fccffd6d2db
+      internalID: -888615057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      avatar_ground_platform_42: -166791985
+      avatar_ground_platform_22: 1296933278
+      avatar_ground_platform_33: 45777593
+      avatar_ground_platform_46: 1232240438
+      avatar_ground_platform_2: -1339386396
+      avatar_ground_platform_23: 498240784
+      avatar_ground_platform_8: 1590037225
+      avatar_ground_platform_7: 894124888
+      avatar_ground_platform_30: 847071551
+      avatar_ground_platform_45: -1193088340
+      avatar_ground_platform_36: 2025179038
+      avatar_ground_platform_44: 999210158
+      avatar_ground_platform_17: -174302083
+      avatar_ground_platform_27: -1724693577
+      avatar_ground_platform_28: -248050519
+      avatar_ground_platform_1: -1539389510
+      avatar_ground_platform_13: -804348871
+      avatar_ground_platform_20: 240533062
+      avatar_ground_platform_52: -2012670510
+      avatar_ground_platform_31: 148837715
+      avatar_ground_platform_32: -588079713
+      avatar_ground_platform_5: 1015703113
+      avatar_ground_platform_29: -566795359
+      avatar_ground_platform_4: 149869156
+      avatar_ground_platform_15: -1162045339
+      avatar_ground_platform_50: 535210807
+      avatar_ground_platform_3: -1858035479
+      avatar_ground_platform_10: -888615057
+      avatar_ground_platform_18: -1325741723
+      avatar_ground_platform_38: 1505122143
+      avatar_ground_platform_12: -2050495593
+      avatar_ground_platform_6: 1613154543
+      avatar_ground_platform_9: -1250939767
+      avatar_ground_platform_47: -2109339320
+      avatar_ground_platform_25: -2119916188
+      avatar_ground_platform_39: 2061736982
+      avatar_ground_platform_40: 689421330
+      avatar_ground_platform_35: -1744303070
+      avatar_ground_platform_53: 2095578705
+      avatar_ground_platform_34: 602822665
+      avatar_ground_platform_51: 1109746910
+      avatar_ground_platform_11: -1220327926
+      avatar_ground_platform_0: -1675017886
+      avatar_ground_platform_21: 1931001417
+      avatar_ground_platform_24: 1740162933
+      avatar_ground_platform_43: 1896271574
+      avatar_ground_platform_14: 2074263544
+      avatar_ground_platform_19: 1430856398
+      avatar_ground_platform_41: -461398508
+      avatar_ground_platform_26: 557148898
+      avatar_ground_platform_37: -38886281
+      avatar_ground_platform_49: 1008432077
+      avatar_ground_platform_16: -919162338
+      avatar_ground_platform_48: -220734237
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
