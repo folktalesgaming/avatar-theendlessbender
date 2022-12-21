@@ -842,7 +842,8 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Game Performance: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -857,11 +858,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 99eea53f-9819-4649-a283-a4bb4bfa5638
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Prototype 3
+  organizationId: alson39
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
