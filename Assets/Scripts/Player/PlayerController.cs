@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D player;
     private Joystick joystick;
     private float speed_f = 5.0f;
-    private float jump_force_f = 3.0f;
+    private float jump_force_f = 2.0f;
     private bool isOnGround = true;
     public float rangeBoundX;
     private bool is_facing_right;
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // make the player jump when on ground and pressed either Space or W key
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || joystick.Vertical > 0) && isOnGround && jumpedTime > jumpInterval) {
+        if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || joystick.Vertical > 0.4) && isOnGround && jumpedTime > jumpInterval) {
             Jump();
         }
 
