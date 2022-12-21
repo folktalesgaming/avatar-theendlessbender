@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1178289817002732576}
   - component: {fileID: 3426247974007249515}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: avatar_ground_platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 798834583
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dcd9373455c48a14f8935baf591e6678, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6780712034486385733}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Single_Ground_Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 8939421626219892531}
   - component: {fileID: 8939421626219892530}
   - component: {fileID: 2904305356484285471}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: avatar_ground_platform_with_grass
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -188,9 +188,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 798834583
+  m_SortingLayer: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b5482f76b3ed8c64eaba6450ef879ca6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
