@@ -43,12 +43,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Controllers and HUD
-    uniqueID: 2625115127
+  - name: Background and envirnoment
+    uniqueID: 798834583
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Characters
     uniqueID: 3610508885
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Controllers and HUD
+    uniqueID: 2625115127
     locked: 0
