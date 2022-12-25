@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private float speed_f = 3.0f;
+    private float speed_f = 5.0f;
+    private float jumpForce = 1.0f;
     private int health = 60;
     private Rigidbody2D enemy;
     private GameObject target;
@@ -32,13 +33,13 @@ public class EnemyController : MonoBehaviour
             - Make enemy chase player to top
             - Make the enemy distance either random or calculate each enemy position or make waves of enemy
         **/
-        if(Vector3.Distance(transform.position, target.transform.position) > 5.0f) {
-        //     transform.Translate(new Vector3(speed_f * Time.deltaTime, 0, 0));
-            // if(transform.position.y < target.transform.position.y) {
-            //     transform.position = Vector2.MoveTowards(transform.position, target.transform.position, 1f);    
-            // }else {
+        if(Vector2.Distance(transform.position, target.transform.position) > 5.0f) {
+            if (target.transform.position.y > transform.position.y)
+            {
+                enemy.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }else {
                 transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed_f * Time.deltaTime);    
-            // }
+            }
         } else {
             if(!isHurt)
                 AttackPlayer();

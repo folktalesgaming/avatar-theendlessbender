@@ -26,8 +26,9 @@ public class EnemySpwaner : MonoBehaviour
         // TODO: fix the rotation on spawn
         int rndVector = Random.Range(0, spwanPositions.Length);
 
-        if(rndVector == 0) 
-            enemyPrefab.transform.Rotate(0f, 180f, 0f);
+        if(rndVector == 1) {
+            enemyPrefab.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
     
         Instantiate(enemyPrefab, spwanPositions[rndVector], enemyPrefab.transform.rotation);
     }
