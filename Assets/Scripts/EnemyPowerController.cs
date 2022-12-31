@@ -25,7 +25,7 @@ public class EnemyPowerController : MonoBehaviour
     {
         if(other.CompareTag("Player")) {
             playerController = other.gameObject.GetComponent<PlayerController>();
-            playerController.TakeDamage(10);
+            playerController.TakeDamage(30);
             Destroy(gameObject);
         }
     }
