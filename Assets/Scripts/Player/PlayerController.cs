@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private int health = 150;
     public GameObject powerPrefab;
     public Transform firePoint;
+    private GameoverScreenController gameOverScreenController;
 
     void Start()
     {
@@ -100,7 +101,10 @@ public class PlayerController : MonoBehaviour
         health -= damage;
 
         if(health <= 0) {
-            Destroy(gameObject);
+            // TODO: change to be dynamic later 
+            Debug.Log("Player is dead");
+            gameOverScreenController.GameoverSetup(30);
+            // Destroy(gameObject);
         }
     }
 
