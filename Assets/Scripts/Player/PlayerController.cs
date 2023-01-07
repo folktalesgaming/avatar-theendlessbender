@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     private int health = 150;
     public GameObject powerPrefab;
     public Transform firePoint;
-    private GameoverScreenController gameOverScreenController;
+    public GameoverScreenController gameOverScreenController;
+    private LogicManager logicManager;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         is_facing_right = true;
         joystick = FindObjectOfType<Joystick>();
         shootedTime = 1f;
+        logicManager = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
     }
 
     void Update()
@@ -104,7 +106,8 @@ public class PlayerController : MonoBehaviour
             // TODO: change to be dynamic later 
             Debug.Log("Player is dead");
             gameOverScreenController.GameoverSetup(30);
-            // Destroy(gameObject);
+            gameObject.SetActive(false);
+            logicManager.SetGameOver();
         }
     }
 

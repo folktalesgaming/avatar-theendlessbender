@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 30054894}
   - component: {fileID: 30054893}
   - component: {fileID: 30054896}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,6 +700,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
 --- !u!1001 &110864827
@@ -788,7 +796,7 @@ GameObject:
   - component: {fileID: 153213260}
   - component: {fileID: 153213259}
   - component: {fileID: 153213258}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,8 +868,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SystemManager, Assembly-CSharp
+      - m_Target: {fileID: 964473819}
+        m_TargetAssemblyTypeName: GameoverScreenController, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -1080,7 +1088,7 @@ GameObject:
   - component: {fileID: 248968444}
   - component: {fileID: 248968443}
   - component: {fileID: 248968446}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ScoreKeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1704,7 +1712,7 @@ GameObject:
   - component: {fileID: 769213225}
   - component: {fileID: 769213227}
   - component: {fileID: 769213226}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1929,7 +1937,7 @@ GameObject:
   - component: {fileID: 949997977}
   - component: {fileID: 949997979}
   - component: {fileID: 949997978}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2065,9 +2073,9 @@ GameObject:
   - component: {fileID: 964473818}
   - component: {fileID: 964473817}
   - component: {fileID: 964473819}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GameoverBG
-  m_TagString: Untagged
+  m_TagString: Gameover
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3000,7 +3008,7 @@ GameObject:
   - component: {fileID: 1341442790}
   - component: {fileID: 1341442792}
   - component: {fileID: 1341442791}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3284,7 +3292,7 @@ GameObject:
   - component: {fileID: 1481887910}
   - component: {fileID: 1481887909}
   - component: {fileID: 1481887908}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3349,7 +3357,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1669852169
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1481887911
@@ -3471,7 +3479,7 @@ GameObject:
   - component: {fileID: 1591438120}
   - component: {fileID: 1591438122}
   - component: {fileID: 1591438121}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GameoverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4167,7 +4175,7 @@ GameObject:
   - component: {fileID: 1804551726}
   - component: {fileID: 1804551725}
   - component: {fileID: 1804551724}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4239,8 +4247,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SystemManager, Assembly-CSharp
+      - m_Target: {fileID: 964473819}
+        m_TargetAssemblyTypeName: GameoverScreenController, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -4945,6 +4953,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 864811078, guid: 3b01039136982ee4ab916e7bb0090542, type: 3}
+      propertyPath: gameOverScreenController
+      value: 
+      objectReference: {fileID: 964473819}
     - target: {fileID: 2565142747717054209, guid: 3b01039136982ee4ab916e7bb0090542, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4963,7 +4975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2565142747717054213, guid: 3b01039136982ee4ab916e7bb0090542, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 93.1
       objectReference: {fileID: 0}
     - target: {fileID: 2565142747717054213, guid: 3b01039136982ee4ab916e7bb0090542, type: 3}
       propertyPath: m_LocalRotation.w
