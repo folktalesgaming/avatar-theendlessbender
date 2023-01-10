@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     private LogicManager logicManager;
     public GameObject powerfab;
     public Transform firePoint;
-    private float shootInterval = 2f;
+    private float shootInterval = 3f;
     private float shootedTime;
     private bool isHurt = false;
 
@@ -26,6 +26,16 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         shootedTime += Time.deltaTime;
+
+        float angle;
+        if(target.transform.position.x > transform.position.x) {
+            angle = 0f;
+        }else {
+            angle = 180f;
+        }
+
+        Quaternion lookRotation = Quaternion.Euler(0f, angle, 0f);
+        enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, lookRotation, Time.deltaTime * 10f);
 
         // TODO: List below
         /** 
@@ -48,6 +58,10 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void FlipCharacter() {
+        transform.Rotate(0f, 180f, 0f);
+    }
+
     // TODO: Check for performance and reliability for this coroutine
     public IEnumerator TakeDamage(int damage) {
         health -= damage;
@@ -58,7 +72,7 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.5f);
 
         isHurt = false;
     }

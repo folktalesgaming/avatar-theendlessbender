@@ -7,13 +7,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D player;
     private Joystick joystick;
     private float speed_f = 5.0f;
-    private float jump_force_f = 2.0f;
+    private float jump_force_f = 3.0f;
     private bool isOnGround = true;
     public float rangeBoundX;
     private bool is_facing_right;
     private float jumpInterval = 0.5f;
     private float jumpedTime;
-    private float shootInterval = 1f;
+    private float shootInterval = 2f; // made shoot interval more for harder gameplay for now
     private float shootedTime;
     private int health = 150;
     public GameObject powerPrefab;
