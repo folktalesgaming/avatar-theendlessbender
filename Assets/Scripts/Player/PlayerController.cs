@@ -104,8 +104,7 @@ public class PlayerController : MonoBehaviour
 
         if(health <= 0) {
             // TODO: change to be dynamic later 
-            Debug.Log("Player is dead");
-            gameOverScreenController.GameoverSetup(30);
+            gameOverScreenController.GameoverSetup(logicManager.getScore());
             gameObject.SetActive(false);
             logicManager.SetGameOver();
         }

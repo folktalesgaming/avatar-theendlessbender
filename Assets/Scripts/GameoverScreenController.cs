@@ -9,7 +9,6 @@ public class GameoverScreenController : MonoBehaviour
     public TextMeshProUGUI finalScore;
 
     public void GameoverSetup(int score) {
-        Debug.Log("Yeta ayooo???");
         gameObject.SetActive(true);
         finalScore.text = "SCORE: " + score;
     }

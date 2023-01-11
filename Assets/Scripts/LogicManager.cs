@@ -19,4 +19,5 @@ public class LogicManager : MonoBehaviour
     }
 
     public bool isGameOver() => gameOver;
+    public int getScore() => score;
 }
