@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private int health = 150;
     public GameObject powerPrefab;
     public Transform firePoint;
+    public Button fireButton;
     public GameoverScreenController gameOverScreenController;
     private LogicManager logicManager;
 
@@ -83,8 +85,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void ReEnableShootButton() {
+        fireButton.interactable = true;
+    }
+
     public void Shoot() {
         if(shootedTime > shootInterval) {
+            fireButton.interactable = false;
+            Invoke("ReEnableShootButton", shootInterval);
             shootedTime = 0f;
             Instantiate(powerPrefab, firePoint.position, transform.rotation);
         }

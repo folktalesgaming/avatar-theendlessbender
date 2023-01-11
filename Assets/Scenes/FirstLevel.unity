@@ -4954,6 +4954,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 864811078, guid: 3b01039136982ee4ab916e7bb0090542, type: 3}
+      propertyPath: fireButton
+      value: 
+      objectReference: {fileID: 30054893}
+    - target: {fileID: 864811078, guid: 3b01039136982ee4ab916e7bb0090542, type: 3}
       propertyPath: gameOverScreenController
       value: 
       objectReference: {fileID: 964473819}
