@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D player;
     private Joystick joystick;
     private float speed_f = 5.0f;
-    private float jump_force_f = 3.0f;
+    private float jump_force_f = 8.0f;
     private bool isOnGround = true;
     public float rangeBoundX;
     private bool is_facing_right;
@@ -16,10 +16,12 @@ public class PlayerController : MonoBehaviour
     private float jumpedTime;
     private float shootInterval = 2f; // made shoot interval more for harder gameplay for now
     private float shootedTime;
-    private int health = 150;
+    private float health = 160;
+    private float maxHealth;
     public GameObject powerPrefab;
     public Transform firePoint;
     public Button fireButton;
+    public Image healthBar;
     public GameoverScreenController gameOverScreenController;
     private LogicManager logicManager;
 
@@ -29,11 +31,15 @@ public class PlayerController : MonoBehaviour
         is_facing_right = true;
         joystick = FindObjectOfType<Joystick>();
         shootedTime = 1f;
+        maxHealth = health;
         logicManager = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
     }
 
     void Update()
     {
+        // TODO: create healthbar vanish fix
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+
         float keyHorizontal = Input.GetAxis("Horizontal");
         float joyHorizontal = joystick.Horizontal;
 
@@ -100,7 +106,8 @@ public class PlayerController : MonoBehaviour
 
     public void Jump() {
         if(isOnGround) {
-            transform.Translate(Vector3.up * jump_force_f);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * jump_force_f, ForceMode2D.Impulse);
+            // transform.Translate(Vector3.up * jump_force_f);
             isOnGround = false;
             jumpedTime = 0f;
         }
@@ -111,7 +118,6 @@ public class PlayerController : MonoBehaviour
         health -= damage;
 
         if(health <= 0) {
-            // TODO: change to be dynamic later 
             gameOverScreenController.GameoverSetup(logicManager.getScore());
             gameObject.SetActive(false);
             logicManager.SetGameOver();
