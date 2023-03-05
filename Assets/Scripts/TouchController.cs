@@ -15,4 +15,24 @@ public class TouchController : MonoBehaviour
     {
         playerController.Shoot();
     }
+
+    public void Jump() 
+    {
+        playerController.Jump();
+    }
+    
+    public void MoveForward() 
+    {
+        playerController.MoveForward();
+    }
+    
+    public void MoveBackward() 
+    {
+        playerController.MoveBackward();
+    }
+
+    public void StopMoving()
+    {
+        playerController.StopMoving();
+    }
 }

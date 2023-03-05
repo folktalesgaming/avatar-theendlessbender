@@ -6,15 +6,13 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D player;
-    private Joystick joystick;
     private float speed_f = 5.0f;
     private float jump_force_f = 8.0f;
     private bool isOnGround = true;
     public float rangeBoundX;
     private bool is_facing_right;
-    private float jumpInterval = 0.5f;
-    private float jumpedTime;
-    private float shootInterval = 2f; // made shoot interval more for harder gameplay for now
+    private bool is_moving = false;
+    private float shootInterval = 1f; // made shoot interval more for harder gameplay for now
     private float shootedTime;
     private float health = 160;
     private float maxHealth;
@@ -29,7 +27,6 @@ public class PlayerController : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         is_facing_right = true;
-        joystick = FindObjectOfType<Joystick>();
         shootedTime = 1f;
         maxHealth = health;
         logicManager = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
@@ -40,47 +37,32 @@ public class PlayerController : MonoBehaviour
         // TODO: create healthbar vanish fix
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
 
-        float keyHorizontal = Input.GetAxis("Horizontal");
-        float joyHorizontal = joystick.Horizontal;
+        bool checkOutOfbound = ((transform.position.x < -rangeBoundX && !is_facing_right) 
+                                || (transform.position.x > rangeBoundX && is_facing_right));
 
-        bool checkOutOfbound = ((transform.position.x < -rangeBoundX && (keyHorizontal < 0 || joyHorizontal < 0)) 
-                                || (transform.position.x > rangeBoundX && (keyHorizontal > 0 || joyHorizontal > 0)));
-
-        jumpedTime += Time.deltaTime;
         shootedTime += Time.deltaTime;
 
         // bound the player movement to the range bound
         if(checkOutOfbound) {
             transform.Translate(Vector3.right * 0);
+            is_moving = false;
         }else {
-        // else make the player move
-            if(is_facing_right) {
-                transform.Translate(Vector3.right * speed_f * Time.deltaTime * joyHorizontal);
-                transform.Translate(Vector3.right * speed_f * Time.deltaTime * keyHorizontal);
-            }else {
-                transform.Translate(Vector3.left * speed_f * Time.deltaTime * joyHorizontal);
-                transform.Translate(Vector3.left * speed_f * Time.deltaTime * keyHorizontal);
+            if(is_moving) {
+                if(is_facing_right) {
+                    if(transform.rotation.y >= 0) {
+                        transform.Translate(Vector3.right * speed_f * Time.deltaTime);
+                    }else {
+                        transform.Translate(Vector3.left * speed_f * Time.deltaTime);
+                    }
+                }else {
+                    if(transform.rotation.y >= 0) {
+                        transform.Translate(Vector3.left * speed_f * Time.deltaTime);
+                    }else {
+                        transform.Translate(Vector3.right * speed_f * Time.deltaTime);
+                    }
+                }
             }
         }
-
-        // rotate the player
-        if((keyHorizontal < 0 || joyHorizontal < 0) && is_facing_right) {
-            is_facing_right = false;
-            FlipCharacter();
-        }else if((keyHorizontal > 0 || joyHorizontal > 0) && !is_facing_right) {
-            is_facing_right = true;
-            FlipCharacter();
-        }
-
-        // make the player jump when on ground and pressed either Space or W key
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || joystick.Vertical > 0.4) && isOnGround && jumpedTime > jumpInterval) {
-            Jump();
-        }
-
-        // shoot the power when left mouse clicked
-        // if(Input.GetMouseButtonDown(0)) {
-        //     Shoot();
-        // }
     }
 
     private void OnCollisionEnter2D(Collision2D collisionInfo)
@@ -104,12 +86,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void MoveForward() {
+        is_moving = true;
+        if(!is_facing_right){
+            is_facing_right = true;
+            FlipCharacter();
+        }
+    }
+
+
+    public void MoveBackward() {
+        is_moving = true;
+        if(is_facing_right){
+            is_facing_right = false;
+            FlipCharacter();
+        }
+    }
+
+    public void StopMoving() {
+        is_moving = false;
+    }
+
     public void Jump() {
         if(isOnGround) {
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * jump_force_f, ForceMode2D.Impulse);
             // transform.Translate(Vector3.up * jump_force_f);
             isOnGround = false;
-            jumpedTime = 0f;
         }
     }
 
