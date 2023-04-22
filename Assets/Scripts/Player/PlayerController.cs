@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D player;
+
+    [SerializeField] private GameObject powerPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private Button fireButton;
+    [SerializeField] private Image healthBar;
+    [SerializeField] private GameoverScreenController gameOverScreenController;
+
     private float speed_f = 5.0f;
     private float jump_force_f = 8.0f;
     private bool isOnGround = true;
@@ -16,16 +22,11 @@ public class PlayerController : MonoBehaviour
     private float shootedTime;
     private float health = 160;
     private float maxHealth;
-    public GameObject powerPrefab;
-    public Transform firePoint;
-    public Button fireButton;
-    public Image healthBar;
-    public GameoverScreenController gameOverScreenController;
+    
     private LogicManager logicManager;
 
     void Start()
     {
-        player = GetComponent<Rigidbody2D>();
         is_facing_right = true;
         shootedTime = 1f;
         maxHealth = health;
