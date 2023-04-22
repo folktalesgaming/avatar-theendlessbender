@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9529bdf998842354190c6c1bd9928041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeBoundX: 35
+  rangeBoundX: 26
   powerPrefab: {fileID: 890772033886721784, guid: 26b02726e2bc0f6439d843472fee7750, type: 3}
   firePoint: {fileID: 315624579}
   fireButton: {fileID: 0}
