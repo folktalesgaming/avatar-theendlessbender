@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameoverScreenController : MonoBehaviour
 {
-    public TextMeshProUGUI finalScore;
+
+    [SerializeField] private TextMeshProUGUI finalScore;
+    [SerializeField] private string level;
 
     public void GameoverSetup(int score) {
         gameObject.SetActive(true);
@@ -14,7 +16,7 @@ public class GameoverScreenController : MonoBehaviour
     }
 
     public void Restart() {
-        SceneManager.LoadScene("FirstLevel");
+        SceneManager.LoadScene(level);
     }
 
     public void MainMenu() {

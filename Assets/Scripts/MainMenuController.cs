@@ -5,39 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    private AudioSource audioSource;
 
     [SerializeField] GameObject exitPopup;
     [SerializeField] GameObject settingPage;
     [SerializeField] GameObject homePage;
 
+    private const string EndlessMode = "EndlessMode";
+    private const string TimedMode = "TimedMode";
+    private const string MainMenu = "MainMenu";
+
     private void Awake() {
-        audioSource = GetComponent<AudioSource>();
     }
 
     public void StartGame() {
-        audioSource.Play();
-        SceneManager.LoadScene("FirstLevel");
+        SceneManager.LoadScene(TimedMode);
     }
 
+    public void StartTimedMode() { SceneManager.LoadScene(TimedMode); }
+
+    public void StartEndlessMode() { SceneManager.LoadScene(EndlessMode); }
+
     public void OpenExitPopUp() {
-        audioSource.Play();
         exitPopup.SetActive(true);
     }
 
     public void CloseExitPopUp() {
-        audioSource.Play();
         exitPopup.SetActive(false);
     }
 
     public void OpenSettingPage() {
-        audioSource.Play();
         settingPage.SetActive(true);
         homePage.SetActive(false);
     }
 
     public void CloseSettingPage() {
-        audioSource.Play();
         settingPage.SetActive(false);
         homePage.SetActive(true);
     }
