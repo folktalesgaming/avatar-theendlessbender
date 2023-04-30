@@ -7,11 +7,15 @@ public class PowerController : MonoBehaviour
     private float speed_f = 20.0f;
     private Rigidbody2D power;
     private EnemyController enemyController;
+    private Animator animator;
 
     void Start()
     {
         power = GetComponent<Rigidbody2D>();
         power.velocity = transform.right * speed_f;
+        animator = GetComponent<Animator>();
+
+        animator.Play("Pulse Animation");
     }
 
     void Update()
@@ -25,7 +29,7 @@ public class PowerController : MonoBehaviour
     {
         if(other.CompareTag("Enemy")) {
             enemyController = other.gameObject.GetComponent<EnemyController>();
-            StartCoroutine(enemyController.TakeDamage(20));
+            enemyController.TakeDamage(20);
             Destroy(gameObject);
         }
     }
