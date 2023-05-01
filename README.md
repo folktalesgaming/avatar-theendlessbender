@@ -19,5 +19,5 @@ With the cool bending of the four elements to the unique and amazing soundtracks
 <br />
 <h2 style="text-align: center;">Some Screenshots</h2>
 
-<img src="./Assets/assets/General UI/ATEB_Main_Screen.png" alt="Main menu screen for avatar the endless bender" />
-<img src="./Assets/assets/General UI/ATEB_Exit_Pop.png" alt="Exit popup for avatar the endless bender" />
+<img src="./Assets/Assets/General UI/ATEB_Main_Screen.png" alt="Main menu screen for avatar the endless bender" />
+<img src="./Assets/Assets/General UI/ATEB_Exit_Pop.png" alt="Exit popup for avatar the endless bender" />
