@@ -28,7 +28,11 @@ public class EnemySpwaner : MonoBehaviour
         numberOfEnemies = baseNumberOfEnemies;
         numberOfEnemiesInScene = 0;
         numberOfSpwanedEnemies = 0;
-        spwanInterval = 3f;
+        if(gameMode == GAME_MODE.TIMED) {
+            spwanInterval = 6f;
+        }else {
+            spwanInterval = 3f;
+        }
         hasNumberOfEnemiesInWaveSpwaned = false;
     }
 
