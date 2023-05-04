@@ -60,7 +60,7 @@ public class EnemyController : MonoBehaviour
         **/
         if(!logicManager.isGameOver() && !logicManager.isPausedOverlayOpen()) {
             if(Vector2.Distance(transform.position, target.transform.position) > 5.0f) {
-                if (target.transform.position.y > transform.position.y)
+                if (target.transform.position.y - 2f > transform.position.y)
                 {
                     enemy.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 }else {
