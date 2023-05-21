@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D enemy;
     private GameObject target;
     private LogicManager logicManager;
-    private EnemyIndicator enemyIndicator;
+    // private EnemyIndicator enemyIndicator;
     public GameObject powerfab;
     public Transform firePoint;
     private float shootInterval = 3f;
@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
         enemy = GetComponent<Rigidbody2D>();
         target = GameObject.Find("Player");
         logicManager = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
-        enemyIndicator = GameObject.Find("EnemyIndicator").GetComponent<EnemyIndicator>();
+        // enemyIndicator = GameObject.Find("EnemyIndicator").GetComponent<EnemyIndicator>();
     }
 
     void Update()
@@ -83,7 +83,7 @@ public class EnemyController : MonoBehaviour
 
         if(health <= 0) {
             logicManager.AddScore();
-            enemyIndicator.RemoveEnemy(gameObject.transform);
+            // enemyIndicator.RemoveEnemy(gameObject.transform);
             OnEnemyDied?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }

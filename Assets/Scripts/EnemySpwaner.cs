@@ -14,7 +14,7 @@ public class EnemySpwaner : MonoBehaviour
     [SerializeField] private GAME_MODE gameMode;
     public GameObject enemyPrefab;
     private LogicManager logicManager;
-    private EnemyIndicator enemyIndicator;
+    // private EnemyIndicator enemyIndicator;
 
     private int waves, numberOfEnemies, numberOfEnemiesInScene, numberOfSpwanedEnemies;
     private int baseNumberOfEnemies = 4;
@@ -39,7 +39,7 @@ public class EnemySpwaner : MonoBehaviour
     void Start()
     {
         logicManager = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
-        enemyIndicator = GameObject.Find("EnemyIndicator").GetComponent<EnemyIndicator>();
+        // enemyIndicator = GameObject.Find("EnemyIndicator").GetComponent<EnemyIndicator>();
 
         if(gameMode == GAME_MODE.TIMED) {
             logicManager.SetIsNewWaveStarting(false);
@@ -115,6 +115,6 @@ public class EnemySpwaner : MonoBehaviour
         int rndVector = Random.Range(0, spwanPositions.Length);
     
         Instantiate(enemyPrefab, spwanPositions[rndVector], enemyPrefab.transform.rotation);
-        enemyIndicator.AddEnemy(enemyPrefab.transform);
+        // enemyIndicator.AddEnemy(enemyPrefab.transform);
     }
 }
