@@ -123,6 +123,7 @@ public class PlayerController : MonoBehaviour
         if(health <= 0) {
             gameOverScreenController.GameoverSetup(logicManager.getScore());
             gameObject.SetActive(false);
+            TimedModeOverlay.Instance.SetOverlayText("Game Over");
             logicManager.SetGameOver();
         }
     }
