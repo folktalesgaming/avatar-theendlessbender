@@ -4002,7 +4002,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e853f65f99c87c6468333693151cd451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 1
 --- !u!114 &1179989064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4238,6 +4237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDropdown: {fileID: 1546568024}
+  slider: {fileID: 1095912856}
+  sliderText: {fileID: 2025530481}
 --- !u!1 &1187290084
 GameObject:
   m_ObjectHideFlags: 0

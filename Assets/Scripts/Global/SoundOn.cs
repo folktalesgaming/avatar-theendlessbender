@@ -28,7 +28,8 @@ public class SoundOn : MonoBehaviour
             audioSourceMain.loop = true;
         }
 
-        audioSourceMain.volume = MainManager.Instance.volume;
+        audioSourceMain.volume = MainManager.Instance.GetBgVolume();
+        audioSourceSecondary.volume = MainManager.Instance.GetSFXVolume();
 
         if(soundType[0] == SOUND_PLAY_TYPE.On_AWAKE || soundType[0] == SOUND_PLAY_TYPE.On_LOOP) {
             audioSourceMain.playOnAwake = true;
@@ -47,17 +48,16 @@ public class SoundOn : MonoBehaviour
     }
 
     public void ToogleSoundPlay() {
-        if(MainManager.Instance.volume > 0f) {
-            MainManager.Instance.volume = 0f;
+        if(MainManager.Instance.GetBgVolume() > 0f) {
+            MainManager.Instance.SetBgVolume(0f);
         }else {
-            MainManager.Instance.volume = 1f;
+            MainManager.Instance.SetBgVolume(1f);
         }
 
-        audioSourceMain.volume = MainManager.Instance.volume;
-        PlayerPrefs.SetFloat(MainManager.BG_MUSIC, MainManager.Instance.volume);
+        audioSourceMain.volume = MainManager.Instance.GetBgVolume();
 
         if(TryGetComponent(out UISwappingLogics uISwapping)) {
-            uISwapping.ToogleState(MainManager.Instance.volume > 0f);
+            uISwapping.ToogleState(MainManager.Instance.GetBgVolume() > 0f);
         }
     }
 
