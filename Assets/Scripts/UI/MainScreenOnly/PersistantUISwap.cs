@@ -7,7 +7,7 @@ public class PersistantUISwap : MonoBehaviour {
     [SerializeField] private Sprite MusicOn, MusicOff;
 
     private void Awake() {
-        if(MainManager.Instance.volume > 0f) {
+        if(MainManager.Instance.GetBgVolume() > 0f) {
             gameObject.GetComponent<Image>().sprite = MusicOn;
         }else {
             gameObject.GetComponent<Image>().sprite = MusicOff;
